@@ -3,6 +3,8 @@ image:
 
 tasks:
   - init: npm install
+  - name: Access MySQL
+    command: mysql
 
 ports:
   - port: 4000
