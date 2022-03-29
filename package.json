@@ -1,0 +1,26 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ITjoniveehernandez/nodejs.git"
+  },
+  "author": "Jon Ivee Hernandez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ITjoniveehernandez/nodejs/issues"
+  },
+  "homepage": "https://github.com/ITjoniveehernandez/nodejs#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.3"
+  }
+}
