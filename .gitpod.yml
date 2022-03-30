@@ -3,10 +3,7 @@ image:
 
 tasks:
   - init: npm install
-  - name: Connect to MySQL
     command: mysql
-  - name: Create Database
-    command: CREATE DATABASE products;
 
 ports:
   - port: 4000
