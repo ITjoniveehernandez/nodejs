@@ -3,7 +3,7 @@ image:
 
 tasks:
   - init: npm install
-    command: mysql
+    # command: mysql
 
 ports:
   - port: 4000
