@@ -1,7 +1,9 @@
 const express = require('express');
+const cors = require('cors');
 const mysql = require('mysql2/promise');
 
 const app = express();
+app.use(cors());
 app.use(express.json());
 
 function dbConnect(dbName = null) {
@@ -30,10 +32,10 @@ app.get('/', (req, res) => {
 
 app.get('/api/teams', (req, res) => {
     const data = [
-        { id: 1, name: 'Jon Ivee Hernandez' },
-        { id: 2, name: 'Edwin Torres' },
-        { id: 3, name: 'Gabriel Salangsang' },
-        { id: 4, name: 'Jared Lucas' }
+        { id: 1, fullname: 'Jon Ivee Hernandez' },
+        { id: 2, fullname: 'Edwin Torres' },
+        { id: 3, fullname: 'Gabriel Salangsang' },
+        { id: 4, fullname: 'Jared Lucas' }
     ];
     
     res.json(data);
