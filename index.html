@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <title>JavaScript Fetch API</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+</head>
+<body>
+
+    <ul></ul>
+
+    <script>
+
+        function displayData(data) {
+            const ul = document.querySelector('ul');
+
+            data.forEach(d => {
+                const li = document.createElement('li');
+                // li.innerText = d.id + ' - ' + d.fullname;
+                li.innerText = d.id + ' - ' + d.username + ' - ' + d.password;
+                ul.appendChild(li);
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            // const apiUrl = 'https://4000-itjoniveehernan-nodejs-7x4ug7ahehg.ws-us38.gitpod.io/api/teams';
+            const apiUrl = 'https://4000-gabrielsalangsa-gitpodpr-n38u8i39130.ws-us38.gitpod.io/api';
+
+            fetch(apiUrl)
+                .then(res => res.json())
+                .then(data => displayData(data))
+                .catch(err => console.log('Error!'));
+        });
+
+    </script>
+
+</body>
+</html>
