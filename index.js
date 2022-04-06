@@ -2,6 +2,7 @@ const express = require('express');
 const mysql = require('mysql2/promise');
 
 const app = express();
+app.use(express.json());
 
 function dbConnect(dbName = null) {
     return mysql.createConnection({
@@ -25,6 +26,17 @@ const dbCreate = async (dbName) => {
 
 app.get('/', (req, res) => {
     res.send('<h1>Node.js Project</h1>');
+});
+
+app.get('/api/teams', (req, res) => {
+    const data = [
+        { id: 1, name: 'Jon Ivee Hernandez' },
+        { id: 2, name: 'Edwin Torres' },
+        { id: 3, name: 'Gabriel Salangsang' },
+        { id: 4, name: 'Jared Lucas' }
+    ];
+    
+    res.json(data);
 });
 
 const PORT = process.env.PORT || 4000;
