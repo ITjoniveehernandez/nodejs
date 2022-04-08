@@ -31,6 +31,13 @@ app.get('/', (req, res) => {
 });
 
 app.get('/api/teams', (req, res) => {
+    /* Basic Auth Base64 */
+    console.log(req.headers.authorization);
+    const encoded = req.headers.authorization;
+    const decoded = Buffer.from(encoded, 'base64').toString('ascii');
+    console.log(decoded);
+    /* End */
+    
     const data = [
         { id: 1, fullname: 'Jon Ivee Hernandez' },
         { id: 2, fullname: 'Edwin Torres' },
